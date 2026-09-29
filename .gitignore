@@ -59,3 +59,6 @@ jacoco/
 # Ktor generated / local files
 
 server.log
+
+## DB
+h2.mv.db
