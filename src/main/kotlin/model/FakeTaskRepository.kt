@@ -8,22 +8,22 @@ class FakeTaskRepository : TaskRepository {
         Task("painting", "Paint the fence", Priority.Medium)
     )
 
-    override fun allTasks() = tasks
+    override suspend fun allTasks() = tasks
 
-    override fun tasksByPriority(priority: Priority) = tasks.filter { it.priority == priority }
+    override suspend fun tasksByPriority(priority: Priority) = tasks.filter { it.priority == priority }
 
-    override fun taskByName(name: String): Task? = tasks.find {
+    override suspend fun taskByName(name: String): Task? = tasks.find {
         it.name.equals(name, ignoreCase = true)
     }
 
-    override fun addTask(task: Task) {
+    override suspend fun addTask(task: Task) {
         if (taskByName(task.name) != null) {
             throw IllegalStateException()
         }
         tasks.add(task)
     }
 
-    override fun removeTask(name: String): Boolean {
+    override suspend fun removeTask(name: String): Boolean {
         return tasks.removeIf { it.name.equals(name, ignoreCase = true) }
     }
 }
