@@ -1,0 +1,61 @@
+# Gradle
+
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Kotlin
+
+*.class
+
+# IntelliJ IDEA
+
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Kotlin/Java generated files
+
+.kotlin/
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Logs
+
+*.log
+
+# Environment / secrets
+
+.env
+.env.*
+!.env.example
+
+# Local configuration
+
+application-local.yaml
+application-local.yml
+application-local.conf
+application-local.properties
+
+# Temporary files
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Test / coverage reports
+
+reports/
+jacoco/
+*.exec
+
+# Ktor generated / local files
+
+server.log
